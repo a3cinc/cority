@@ -12,6 +12,7 @@ namespace BillSplitter
 
             Console.WriteLine("Enter the file name");
             string inputFileName = Console.ReadLine();
+            inputFileName = inputFileName.ToLower().Trim();
 
             BillSplitter BillSplit = new BillSplitter();
             (bool flag, string file) = BillSplit.IsValidFile(inputFileName, currentDirectory, out string errmsg);
