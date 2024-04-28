@@ -24,7 +24,7 @@ spec:
           - name: ACCEPT_EULA
             value: "Y"
           - name: SA_PASSWORD
-          value: "SomePassword" # replace with your password
+            value: "SomePassword" # replace with your password
           volumeMounts:
           - mountPath: /var/opt/mssql/data
             name: mssqldb
