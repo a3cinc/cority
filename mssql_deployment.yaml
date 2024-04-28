@@ -16,14 +16,14 @@ spec:
     spec:
       containers:
       - name: hbt-mssql
-        image: mcr.microsoft.com/azure-sql-edge:latest
+        image: mcr.microsoft.com/mssql/server:2019-latest
         ports:
         - containerPort: 1433
         env:
         - name: ACCEPT_EULA
           value: "Y"
         - name: SA_PASSWORD
-          value: "Abh1navas" # replace with your password
+          value: "SomePassword" # replace with your password
         volumeMounts:
         - name: mssql-persistent-storage
           mountPath: /var/opt/mssql
@@ -38,3 +38,4 @@ spec:
       - name: mssql-persistent-storage
         persistentVolumeClaim:
           claimName: nfs-db-pvc
+
