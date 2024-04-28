@@ -1,21 +1,17 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hbt-db
+  name: mssql-deployment
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hbt-db
+      app: mssql
   template:
     metadata:
       labels:
-        app: hbt-db
-    spec:
-      containers:
-      - name: hbt-mssql
+        app: mssql
     spec:
       containers:
       - name: mssql
@@ -26,7 +22,6 @@ spec:
         - name: ACCEPT_EULA
           value: "Y"
         - name: SA_PASSWORD
-          value: "Abh1navas" # replace with your password
-        volumeMounts:
-        - name: mssql-persistent-storage
-          mountPath: /var/opt/mssql
+          value: "YourStrongPassword"
+        - name: MSSQL_AGENT_ENABLED
+          value: "True"
