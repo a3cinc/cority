@@ -2,16 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mssql-deployment
+  name: hbt-db
+  namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mssql
+      app: hbt-db
   template:
     metadata:
       labels:
-        app: mssql
+        app: hbt-db
+    spec:
+      containers:
+      - name: hbt-mssql
     spec:
       containers:
       - name: mssql
