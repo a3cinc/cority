@@ -16,6 +16,10 @@ spec:
     spec:
       containers:
       - name: hbt-mssql
+        command:
+          - /bin/bash
+          - -c
+          - sudo cp /var/opt/config/mssql.conf /var/opt/mssql/mssql.conf && /opt/mssql/bin/sqlservr
         image: mcr.microsoft.com/mssql/server:2019-latest
         ports:
         - containerPort: 1433
