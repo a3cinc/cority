@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hbt-db
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -37,3 +38,4 @@ spec:
       - name: mssql-persistent-storage
         persistentVolumeClaim:
           claimName: nfs-db-pvc
+
