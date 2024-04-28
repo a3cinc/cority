@@ -23,7 +23,7 @@ spec:
         - name: ACCEPT_EULA
           value: "Y"
         - name: SA_PASSWORD
-          value: "SomePassword" # replace with your password
+          value: "Abh1navas" # replace with your password
         volumeMounts:
         - name: mssql-persistent-storage
           mountPath: /var/opt/mssql
@@ -32,10 +32,9 @@ spec:
             memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "128Mi"
+            memory: "2Gi"
             cpu: "500m"
       volumes:
       - name: mssql-persistent-storage
         persistentVolumeClaim:
           claimName: nfs-db-pvc
-
