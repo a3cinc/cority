@@ -19,7 +19,8 @@ spec:
         command:
           - /bin/bash
           - -c
-          - sudo cp /var/opt/config/mssql.conf /var/opt/mssql/mssql.conf && /opt/mssql/bin/sqlservr
+          - cp /var/opt/config/mssql.conf /var/opt/mssql/mssql.conf && /opt/mssql/bin/sqlservr
+          - chmod +x /opt/mssql/bin/permissions_check.sh
         image: mcr.microsoft.com/mssql/server:2019-latest
         ports:
         - containerPort: 1433
